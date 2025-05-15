@@ -24,6 +24,9 @@ if ($password == "") {
   exit;
 }
 
+$username = htmlspecialchars($username, ENT_QUOTES, "UTF-8");
+$password = htmlspecialchars($password, ENT_QUOTES, "UTF-8");
+
 $userManager = new UserManager();
 $success = $userManager->register($username, $password);
 if ($success) {
